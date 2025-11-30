@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "ES2022",
+    "lib": ["ES2022"],
+
+    /* Modules */
+    "module": "commonjs",
+    "rootDir": "./src",
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "declaration": true,
+    "declarationMap": true,
+    "outDir": "./dist",
+
+    /* Emit */
+    "sourceMap": true,
+    "removeComments": true,
+
+    /* Interop Constraints */
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+
+    /* Type Checking - STRICT MODE FOR LEARNING */
+    "strict": true,                           /* Enable all strict type-checking options */
+    "noImplicitAny": true,                    /* Error on expressions with implied 'any' type */
+    "strictNullChecks": true,                 /* Distinguish between null and undefined */
+    "strictFunctionTypes": true,              /* Strict checking of function types */
+    "strictBindCallApply": true,              /* Strict bind/call/apply methods */
+    "strictPropertyInitialization": true,     /* Ensure class properties are initialized */
+    "noImplicitThis": true,                   /* Error when 'this' has type 'any' */
+    "alwaysStrict": true,                     /* Emit 'use strict' */
+    /* Disabled for skeleton functions - re-enable after implementation */
+    "noUnusedLocals": false,                  /* Error on unused local variables */
+    "noUnusedParameters": false,              /* Error on unused function parameters */
+    "noImplicitReturns": true,                /* Error when not all code paths return a value */
+    "noFallthroughCasesInSwitch": true,       /* Error on fallthrough cases in switch */
+    "noUncheckedIndexedAccess": true,         /* Add undefined to index signature results */
+
+    /* Completeness */
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "__tests__"]
+}

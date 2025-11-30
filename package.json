@@ -1,0 +1,37 @@
+{
+  "name": "sudoku-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Next.js and React Native Sudoku app with shared core logic",
+  "scripts": {
+    "dev": "next dev",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "next lint",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "keywords": [
+    "sudoku",
+    "nextjs",
+    "react-native",
+    "monorepo"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "next": "^16.0.5",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.25",
+    "@types/react": "^19.2.7",
+    "autoprefixer": "^10.4.22",
+    "eslint": "^9.39.1",
+    "eslint-config-next": "^16.0.5",
+    "postcss": "^8.5.6",
+    "prettier": "^3.7.3",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,45 @@
+/**
+ * Tailwind CSS directives
+ * LEARN: Tailwind uses utility classes for styling
+ * - @tailwind base: CSS resets and base styles
+ * - @tailwind components: Component-level utilities
+ * - @tailwind utilities: Utility classes for styling
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/**
+ * Custom utilities for Sudoku board
+ */
+@layer utilities {
+  .cell-input {
+    @apply text-center font-bold text-2xl;
+  }
+
+  .cell-given {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+
+  .cell-invalid {
+    @apply bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400;
+  }
+}

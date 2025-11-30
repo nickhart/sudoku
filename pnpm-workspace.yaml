@@ -1,0 +1,9 @@
+# pnpm workspace configuration
+# This defines a monorepo structure allowing multiple packages to share dependencies
+# Learn more: https://pnpm.io/workspaces
+
+packages:
+  # Core game logic - platform-agnostic, no React dependencies
+  - 'packages/*'
+  # Next.js web app (we'll keep it at root for simplicity)
+  # In production, you might move it to 'apps/*'
