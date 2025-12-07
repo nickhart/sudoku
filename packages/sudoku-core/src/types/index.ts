@@ -10,3 +10,5 @@
 
 export * from './difficulty'
 export * from './game'
+export * from './sudoku-array'
+export * from './cell'

@@ -2,11 +2,7 @@
   "compilerOptions": {
     /* Base Options */
     "target": "ES2022",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -21,12 +17,8 @@
     /* Path Mapping */
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@sudoku/core": [
-        "./packages/sudoku-core/src"
-      ]
+      "@/*": ["./src/*"],
+      "@sudoku/core": ["./packages/sudoku-core/src"]
     },
     /* Strict Type Checking - LEARN: These catch bugs early! */
     "noUnusedLocals": true,
@@ -48,8 +40,5 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules",
-    "packages"
-  ]
+  "exclude": ["node_modules", "packages"]
 }

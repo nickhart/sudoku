@@ -54,7 +54,10 @@ const GameContext = createContext<GameContextType | undefined>(undefined)
  * @param action - Action to perform
  * @returns New game state
  */
-function gameReducer(state: GameState | null, action: GameAction): GameState | null {
+function gameReducer(
+  state: GameState | null,
+  action: GameAction
+): GameState | null {
   // TODO: YOUR IMPLEMENTATION HERE
   //
   // Example structure:

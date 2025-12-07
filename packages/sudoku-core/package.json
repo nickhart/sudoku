@@ -7,9 +7,14 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "type-check": "tsc --noEmit"
   },
-  "keywords": ["sudoku", "game-logic"],
+  "keywords": [
+    "sudoku",
+    "game-logic"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {

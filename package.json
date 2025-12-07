@@ -7,8 +7,14 @@
     "dev": "next dev",
     "build": "pnpm -r build",
     "test": "pnpm -r test",
+    "test:watch": "pnpm --filter @sudoku/core test:watch",
     "lint": "next lint",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+    "lint:fix": "next lint --fix",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "type-check": "tsc --noEmit && pnpm --filter @sudoku/core exec tsc --noEmit",
+    "validate": "pnpm run format:check && pnpm run type-check && pnpm run test && pnpm run build",
+    "validate:all": "pnpm run format:check && pnpm run lint && pnpm run type-check && pnpm run test && pnpm run build"
   },
   "keywords": [
     "sudoku",

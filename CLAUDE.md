@@ -5,6 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Overview
 
 This is a cross-platform Sudoku application built with:
+
 - **Next.js 14+** for web interface (App Router)
 - **React Native** for mobile apps (future - iOS/Android)
 
@@ -92,51 +93,96 @@ sudoku/
 ```typescript
 import {
   // Types
-  Board, Cell, CellValue, Puzzle, GameState, GameAction,
-  Difficulty, ValidationResult,
+  Board,
+  Cell,
+  CellValue,
+  Puzzle,
+  GameState,
+  GameAction,
+  Difficulty,
+  ValidationResult,
 
   // Board operations (immutable)
-  createEmptyBoard, setCell, getCell, clearCell,
-  getRow, getColumn, getBox,
+  createEmptyBoard,
+  setCell,
+  getCell,
+  clearCell,
+  getRow,
+  getColumn,
+  getBox,
 
   // Validation
-  isValidMove, validateMove, isBoardValid, isBoardSolved,
+  isValidMove,
+  validateMove,
+  isBoardValid,
+  isBoardSolved,
 
   // Solver
-  solveSudoku, getHint,
+  solveSudoku,
+  getHint,
 
   // Generator
   generatePuzzle,
 
   // Storage
-  StorageAdapter, STORAGE_KEYS,
+  StorageAdapter,
+  STORAGE_KEYS,
 } from '@sudoku/core'
 ```
 
 ### Implementation Status
 
-✅ **Completed** (Phase 1):
+✅ **Completed** (Phase 1 & 2):
+
+**Infrastructure:**
+
 - Monorepo structure with pnpm workspaces
-- Core package skeleton with comprehensive types
-- Next.js app with TypeScript and Tailwind CSS
-- React Context with reducer pattern
-- Error Boundary component
-- Skeleton UI components (Board, Cell, GameControls)
-- Web storage adapter
-- Configuration files (ESLint, Prettier, tsconfig)
+- Core package with comprehensive type system
+- Next.js app with TypeScript and Tailwind CSS v3
+- shadcn/ui integration for UI components
+- Quality gates: format, type-check, test, build
+- CONTRIBUTING.md with development workflow
+
+**Type System:**
+
+- `SudokuArray` - Compact 0-9 format (81-element tuple)
+- `CellArray` - 1D array of Cell objects with metadata
+- `Cell` - Interface with row/col/box position + game state
+- `Notes` - Tri-state system (-1=excluded, 0=unmarked, 1=included)
+- `Board` - 2D array representation (legacy, may refactor)
+- Standardized on 0 for empty cells (not null)
+
+**UI Pages:**
+
+- Main menu with navigation
+- Game page with Board and GameControls
+- Settings page with comprehensive options
+- About page with rules and help
+
+**Core Package Stubs:**
+
+- `game/board.ts` - Board operations (partial implementation)
+- `game/cell-array.ts` - 1D array helpers (stubs)
+- `game/notes.ts` - Tri-state notes system (stubs)
+- `game/validator.ts` - Validation logic (stubs)
+- `game/solver.ts` - Backtracking solver (stubs)
+- `game/generator.ts` - Puzzle generator (stubs)
+
+**Contexts:**
+
+- `SettingsContext` - Global app settings with localStorage
+- `GameContext` - Game state management (skeleton)
 
 ⏳ **To Implement**:
-- Core game functions in `packages/sudoku-core/src/game/`
-  - Board operations (immutable updates)
-  - Validation logic
-  - Backtracking solver
-  - Puzzle generator
-- GameContext reducer implementation
+
+- Core game function implementations
+- GameContext reducer logic
 - UI component event handlers
 - Game persistence with localStorage
-- Settings/Debug page
 - Timer functionality
 - Undo/Redo
+- Actual puzzle generation algorithm
+- Mobile-responsive design improvements
 
 ## Development Guidelines
 

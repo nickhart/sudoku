@@ -38,7 +38,7 @@ export function isValidMove(
   // TODO: YOUR IMPLEMENTATION HERE
   //
   // Example structure:
-  // if (value === null) return true
+  // if (value === 0) return true  // Empty cells are always valid
   //
   // const rowCells = getRow(board, row)
   // const hasRowConflict = rowCells.some((cell, c) => c !== col && cell.value === value)

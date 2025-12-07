@@ -61,7 +61,7 @@ export function findEmptyCell(
   board: Board
 ): { row: number; col: number } | null {
   // TODO: YOUR IMPLEMENTATION HERE
-  // HINT: Use nested loops to find first cell with value === null
+  // HINT: Use nested loops to find first cell with value === 0
   throw new Error('Not implemented: findEmptyCell')
 }
 

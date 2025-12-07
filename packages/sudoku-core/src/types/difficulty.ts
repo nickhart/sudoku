@@ -18,10 +18,10 @@ export type Difficulty = 'easy' | 'medium' | 'hard' | 'expert'
  * - Standard Sudoku has 81 total cells
  */
 export const DIFFICULTY_CONFIG: Record<Difficulty, { clues: number }> = {
-  easy: { clues: 45 },    // ~55% filled
-  medium: { clues: 35 },  // ~43% filled
-  hard: { clues: 28 },    // ~35% filled
-  expert: { clues: 22 },  // ~27% filled
+  easy: { clues: 45 }, // ~55% filled
+  medium: { clues: 35 }, // ~43% filled
+  hard: { clues: 28 }, // ~35% filled
+  expert: { clues: 22 }, // ~27% filled
 }
 
 /**

@@ -34,7 +34,7 @@ describe('Board Functions', () => {
       // const board = createEmptyBoard()
       // board.forEach(row => {
       //   row.forEach(cell => {
-      //     expect(cell.value).toBeNull()
+      //     expect(cell.value).toBe(0)
       //     expect(cell.isGiven).toBe(false)
       //   })
       // })
@@ -45,7 +45,7 @@ describe('Board Functions', () => {
     it.skip('should create an empty cell', () => {
       // TODO: Uncomment when implemented
       // const cell = createEmptyCell()
-      // expect(cell.value).toBeNull()
+      // expect(cell.value).toBe(0)
       // expect(cell.isGiven).toBe(false)
       // expect(cell.isValid).toBe(true)
       // expect(cell.notes).toEqual([])
@@ -75,7 +75,7 @@ describe('Board Functions', () => {
       // const newBoard = setCell(board, 0, 0, 5)
       //
       // // Original board unchanged
-      // expect(getCell(board, 0, 0)).toBeNull()
+      // expect(getCell(board, 0, 0)).toBe(0)
       //
       // // New board has update
       // expect(getCell(newBoard, 0, 0)).toBe(5)

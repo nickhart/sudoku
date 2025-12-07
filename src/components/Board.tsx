@@ -49,7 +49,11 @@ export function Board({ board }: BoardProps) {
    *
    * TODO: Call the context's setCell function
    */
-  const handleValueChange = (row: number, col: number, value: number | null) => {
+  const handleValueChange = (
+    row: number,
+    col: number,
+    value: number | null
+  ) => {
     // TODO: YOUR IMPLEMENTATION HERE
     // setCell(row, col, value)
     console.log('handleValueChange not implemented', row, col, value)

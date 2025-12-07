@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { SettingsProvider } from '@/lib/contexts/SettingsContext'
 
 /**
  * Root layout component
@@ -26,9 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        {/* TODO: Add GameProvider context here once created */}
-        {/* TODO: Add ErrorBoundary here once created */}
-        {children}
+        <SettingsProvider>
+          {/* TODO: Add GameProvider context here once created */}
+          {/* TODO: Add ErrorBoundary here once created */}
+          {children}
+        </SettingsProvider>
       </body>
     </html>
   )

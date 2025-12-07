@@ -64,7 +64,9 @@ export function GameControls() {
         <div className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow">
           <div className="grid grid-cols-2 gap-4 text-sm">
             <div>
-              <span className="text-gray-600 dark:text-gray-400">Difficulty:</span>
+              <span className="text-gray-600 dark:text-gray-400">
+                Difficulty:
+              </span>
               <span className="ml-2 font-semibold capitalize">
                 {state.originalPuzzle.difficulty}
               </span>
@@ -74,7 +76,9 @@ export function GameControls() {
               <span className="ml-2 font-semibold">{state.moves}</span>
             </div>
             <div>
-              <span className="text-gray-600 dark:text-gray-400">Hints Used:</span>
+              <span className="text-gray-600 dark:text-gray-400">
+                Hints Used:
+              </span>
               <span className="ml-2 font-semibold">{state.hintsUsed}</span>
             </div>
             <div>

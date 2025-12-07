@@ -5,6 +5,7 @@ Platform-agnostic Sudoku game logic package.
 ## Philosophy
 
 This package contains **pure TypeScript** with no framework dependencies (no React, no Next.js). This allows the same logic to be used in:
+
 - Next.js web app
 - React Native mobile app
 - Node.js CLI tools

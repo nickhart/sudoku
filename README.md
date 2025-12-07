@@ -5,6 +5,7 @@ A Next.js and React Native Sudoku app built with best practices for learning.
 ## 🎯 Project Goals
 
 This is an educational project focusing on:
+
 - **Next.js 14+ App Router** patterns
 - **TypeScript** strict mode and type safety
 - **Monorepo architecture** with pnpm workspaces

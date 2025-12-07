@@ -1,54 +1,39 @@
 import { Board, Cell, CellValue } from '../types'
+import { createEmptyNotes } from './notes'
 
 /**
  * Creates an empty Sudoku board (9x9 grid of empty cells)
  *
- * LEARNING NOTE: Factory function pattern
  * - Returns a fresh board every time (no shared state)
- * - All cells start empty (value: null)
+ * - All cells start empty (value: 0)
  * - All cells are editable (isGiven: false)
- *
- * TODO: Implement this function
- * HINT: Use nested loops or Array.from() with map()
- * HINT: Each cell should be: { value: null, isGiven: false, isValid: true, notes: [] }
  *
  * @returns A new 9x9 board filled with empty cells
  */
 export function createEmptyBoard(): Board {
-  // TODO: YOUR IMPLEMENTATION HERE
-  // Example structure:
-  // return Array.from({ length: 9 }, () =>
-  //   Array.from({ length: 9 }, () => createEmptyCell())
-  // )
-  throw new Error('Not implemented: createEmptyBoard')
+  return Array.from({ length: 9 }, () =>
+    Array.from({ length: 9 }, () => createEmptyCell())
+  )
 }
 
 /**
  * Creates a single empty cell
  *
- * LEARNING NOTE: Helper factory for consistency
- * - Ensures all empty cells have the same structure
- * - DRY principle: Don't Repeat Yourself
- *
- * TODO: Implement this helper
- *
  * @returns A new empty cell
  */
 export function createEmptyCell(): Cell {
-  // TODO: YOUR IMPLEMENTATION HERE
-  throw new Error('Not implemented: createEmptyCell')
+  return { value: 0, isGiven: false, isValid: true, notes: createEmptyNotes() }
 }
 
 /**
  * Creates a cell with a specific value
  *
- * @param value - The number to place (1-9)
+ * @param value - The number to place (0-9, where 0 = empty)
  * @param isGiven - Whether this is part of the original puzzle
  * @returns A new cell with the specified value
  */
 export function createCell(value: CellValue, isGiven = false): Cell {
-  // TODO: YOUR IMPLEMENTATION HERE
-  throw new Error('Not implemented: createCell')
+  return { value, isGiven, isValid: true, notes: createEmptyNotes() }
 }
 
 /**
@@ -64,10 +49,6 @@ export function createCell(value: CellValue, isGiven = false): Cell {
  * 2. Copy target row, but replace target cell
  * 3. Copy all rows after target row
  *
- * TODO: Implement this function
- * HINT: Use map() to create new arrays
- * HINT: board.map((row, r) => r === rowIndex ? ... : row)
- *
  * @param board - The current board
  * @param row - Row index (0-8)
  * @param col - Column index (0-8)
@@ -80,42 +61,31 @@ export function setCell(
   col: number,
   value: CellValue
 ): Board {
-  // TODO: YOUR IMPLEMENTATION HERE
-  //
-  // Example approach:
-  // return board.map((rowArray, r) =>
-  //   r === row
-  //     ? rowArray.map((cell, c) => (c === col ? { ...cell, value } : cell))
-  //     : rowArray
-  // )
-  throw new Error('Not implemented: setCell')
+  return board.map((rowArray, r) =>
+    r === row
+      ? rowArray.map((cell, c) => (c === col ? { ...cell, value } : cell))
+      : rowArray
+  )
 }
 
 /**
  * Gets a cell value at specific coordinates
  *
- * LEARNING NOTE: Safe array access
+ * Safe array access
  * - Check bounds to prevent undefined errors
- * - TypeScript's noUncheckedIndexedAccess will help here
- *
- * TODO: Implement this function
- * HINT: Access board[row]?.[col] (optional chaining for safety)
+ * - TypeScript's noUncheckedIndexedAccess will return undefined if indexing out of bounds
  *
  * @param board - The board to read from
  * @param row - Row index (0-8)
  * @param col - Column index (0-8)
- * @returns The cell value, or null if out of bounds
+ * @returns The cell value, or 0 if out of bounds
  */
 export function getCell(board: Board, row: number, col: number): CellValue {
-  // TODO: YOUR IMPLEMENTATION HERE
-  throw new Error('Not implemented: getCell')
+  return board[row]?.[col]?.value ?? 0
 }
 
 /**
- * Clears a cell (sets value to null) - IMMUTABLY
- *
- * TODO: Implement this function
- * HINT: Use setCell with value null
+ * Clears a cell (sets value to 0) - IMMUTABLY
  *
  * @param board - The current board
  * @param row - Row index (0-8)
@@ -123,18 +93,15 @@ export function getCell(board: Board, row: number, col: number): CellValue {
  * @returns A NEW board with the cell cleared
  */
 export function clearCell(board: Board, row: number, col: number): Board {
-  // TODO: YOUR IMPLEMENTATION HERE
-  throw new Error('Not implemented: clearCell')
+  return setCell(board, row, col, 0)
 }
 
 /**
  * Toggles a note (pencil mark) for a cell - IMMUTABLY
  *
- * LEARNING NOTE: Toggling in immutable arrays
  * - If note exists: filter it out
  * - If note doesn't exist: add it with spread operator
  *
- * TODO: Implement this function
  * HINT: Use Array.includes() to check if note exists
  * HINT: Use Array.filter() to remove, or [...notes, note] to add
  *
@@ -219,13 +186,13 @@ export function getBoxIndex(row: number, col: number): number {
 }
 
 /**
- * Checks if the board is completely filled (no null values)
+ * Checks if the board is completely filled (no zeros)
  *
  * TODO: Implement this function
  * HINT: Use board.every() with nested check
  *
  * @param board - The board to check
- * @returns True if all cells have values
+ * @returns True if all cells have values (1-9)
  */
 export function isBoardFilled(board: Board): boolean {
   // TODO: YOUR IMPLEMENTATION HERE
@@ -236,7 +203,7 @@ export function isBoardFilled(board: Board): boolean {
  * Counts how many cells are filled
  *
  * TODO: Implement this function
- * HINT: Use reduce() or nested loops to count non-null cells
+ * HINT: Use reduce() or nested loops to count non-zero cells
  *
  * @param board - The board to check
  * @returns Number of filled cells (0-81)

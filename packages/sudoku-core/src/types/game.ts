@@ -1,15 +1,16 @@
 import { Difficulty } from './difficulty'
+import { SudokuValue } from './sudoku-array'
 
 /**
  * Represents a single cell value in Sudoku
  *
  * LEARNING NOTE: Why union types?
- * - null represents an empty cell (not filled by puzzle or user)
+ * - 0 represents an empty cell (not filled by puzzle or user)
  * - 1-9 are the only valid Sudoku numbers
  * - TypeScript will enforce this at compile time
- * - Alternative: Could use 0 for empty, but null is more semantic
+ * - This is an alias of SudokuValue for consistency
  */
-export type CellValue = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | null
+export type CellValue = SudokuValue
 
 /**
  * A single cell in the Sudoku board
@@ -20,7 +21,7 @@ export type CellValue = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | null
  * - When updating, we create a NEW cell object instead of modifying
  *
  * Fields explained:
- * - value: Current number in the cell (null if empty)
+ * - value: Current number in the cell (0 if empty, 1-9 if filled)
  * - isGiven: True if this was part of the original puzzle (can't be changed by user)
  * - isValid: True if the current value doesn't violate Sudoku rules
  * - notes: Array of possible numbers user is considering (pencil marks)
